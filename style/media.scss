@@ -71,15 +71,16 @@
       margin-bottom: 20px;
       flex-direction: row;
       max-width: 100%;
-      .item-ava{
+      .item-ava {
         margin-right: 10px;
       }
-      .item-name{
+      .item-name,
+      .item-link {
         text-align: left;
       }
     }
   }
-  .arrows{
+  .arrows {
     transform: rotate(90deg);
     left: 0;
     top: -65px;
@@ -91,6 +92,9 @@
     font-size: 25px;
     line-height: 30px;
   }
+  .container {
+    padding: 0 20px;
+  }
   .second {
     .item-number {
       max-width: 70px;
@@ -100,7 +104,7 @@
         width: 100%;
       }
     }
-    .item-content{
+    .item-content {
       margin-left: 0;
     }
     .item-content h2 {
@@ -162,6 +166,64 @@
   }
   .modal-section {
     max-width: 90%;
+  }
+  .header {
+    .header-date {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    .header-title {
+      font-size: 46px;
+      line-height: 60px;
+      margin-bottom: 60px;
+    }
+    .header-dj {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+  .second {
+    .second-list {
+      margin-top: 60px;
+    }
+    .second-item .item-num {
+      font-size: 51px;
+      line-height: 61px;
+    }
+    .item-content {
+      .title {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 30px;
+      }
+      .content {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+     .content-list .content-item {
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 10px;
+      padding-left: 36px;
+    }
+  }
+  .third {
+    .item-ava {
+      margin-bottom: 0;
+      .ava {
+        width: 160px;
+        height: 160px;
+      }
+      .star {
+        top: -30px;
+        left: -30px;
+      }
+    }
+    .item-name {
+      font-size: 25px;
+      line-height: 25px;
+    }
   }
 }
 
