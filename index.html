@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Store</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/media.css">
+    <link rel="stylesheet" href="./style/fonts/stylesheet.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="myModal" class="modal">
+        <div class="modal-section modal-center">
+            <div class="close" onclick="closeModal()"></div>
+            <div class="form-content">
+                <!--  -->
+                <form action="" method="post" id="ahead_form" onsubmit="return sendRequest(event)" name="ahead_form"
+                    class="modal-form">
+                    <input type="name" name="name" placeholder="Имя Фамилия *" class="input-field must" required>
+                    <input type="company" name="company" placeholder="Компания *" class="input-field must" required>
+                    <input type="email" name="email" placeholder="E-mail *" class="input-field must" required>
+                    <div>
+                        <p class="modal-helper"><span>*</span> — поля, обязательные для заполнения</p>
+                        <p class="modal-helper">Нажимая кнопку «Записаться», вы даёте свое <a href="./sogl.docx"
+                                target="_blank"><span> согласие на обработку персональных
+                                    данных</span></a> и соглашаетесь с <a
+                                href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                                target="_blank"><span>политикой обработки персональных данных</span></a>.</p>
+                    </div>
+                    <button disabled="disabled" class="btn" type="submit" id="ahead_form_btn">Записаться</button>
+                </form>
+
+            </div>
+            <div class="form-loader">
+                <div class="form-loader-wrapper">
+                    <div class="lds-dual-ring"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-list">
+                <img class="logo" src="./img/icon/logo.svg" alt="logo">
+                <div class="line"></div>
+                <img class="logo" src="./img/face.svg" alt="face">
+
+            </div>
+        </div>
+        <img src="./img/star.svg" alt="" class="star-nav">
+    </nav>
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <div class="header-date">
+                    3 августа 18:00 <span>| Прямой эфир</span>
+                    <div class="arrows">
+                        <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+                        <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+                    </div>
+                </div>
+                <h1 class="header-title">
+                    Всё о рекламе <br /> в подкастах
+                </h1>
+                <button class="btn btn-header" id="myBtn" onclick="openModal('myModal')">Принять участие</button>
+            </div>
+        </div>
+    </header>
+    <section class="second">
+        <div class="container">
+            <h1 class="main-title">
+                О чем говорим
+            </h1>
+            <div class="second-list">
+                <div class="second-item">
+                    <div class="item-num">01/</div>
+                    <div class="item-content">
+                        <div class="title">Инсайты с рынка рекламы</div>
+                        <p class="content">Обсудим, что стоит знать для понимания механизмов интеграций в подкастах, и
+                            зачем рекламодателям стоит протестировать этот канал</p>
+                        <p class="content">
+                            А так же:
+                        </p>
+                        <div class="content-list">
+                            <p class="content-item">В чем особенности рынка и как понять, что реклама эффективна?</p>
+                            <p class="content-item">Какая роль у агентств в этом и почему с ними надо работать?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-item">
+                    <div class="item-num">02/</div>
+                    <div class="item-content">
+                        <div class="title">Что такое запуск и с чем его едят?</div>
+                        <p class="content">С помощью кейсов Go Ahead пройдём путь от выбора релевантных для кампании
+                            подкастов до сбора статистики. </p>
+                        <div class="content-list">
+                            <p class="content-item">Построение коммуникации</p>
+                            <p class="content-item">Провалы во время запусков и как их избежать</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-item">
+                    <div class="item-num">03/</div>
+                    <div class="item-content">
+                        <div class="title">Интерактивная дискуссия</div>
+                        <p class="content">Вместе с приглашенными подкастерами обсудим, зачем нужны подкасты, их
+                            эффективность исходя
+                            из личных кейсов и будущего этого канала.</p>
+                        <div class="content-list">
+                            <p class="content-item">Наиболее эффективные интеграции в подкастах</p>
+                            <p class="content-item">Что есть сейчас и как рынок будет развиваться дальше?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="third">
+        <div class="container">
+            <h1 class="main-title">
+                Кто в эфире
+            </h1>
+            <div class="third-list">
+                <div class="third-item">
+                    <div class="item-ava">
+                        <img class="ava" src="./img/vika.png" alt="">
+                        <img class="star" src="./img/star2.svg" alt="">
+                    </div>
+                    <p class="item-name">Виктория Афонина </p>
+                    <a href="https://goahead.ai/" target="_blank" class="item-link">Go Ahead</a>
+                </div>
+                <div class="third-item">
+                    <div class="item-ava">
+                        <img class="ava" src="./img/poli.png" alt="">
+                        <img class="star" src="./img/star2.svg" alt="">
+                    </div>
+                    <p class="item-name">Полина Варпулева </p>
+                    <a href="https://goahead.ai/" target="_blank" class="item-link">Go Ahead</a>
+                </div>
+                <div class="third-item">
+                    <div class="item-ava">
+                        <img class="ava" src="./img/roma.png" alt="">
+                        <img class="star" src="./img/star2.svg" alt="">
+                    </div>
+                    <p class="item-name">Роман Абдурахимов </p>
+                    <a href="https://f2fst.ru/" target="_blank" class="item-link">Face 2 Face</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <h1 class="main-title footer-arrow">
+                Хочу смотреть!
+                <div class="arrows">
+                    <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+                    <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+                </div>
+            </h1>
+            <div class="footer-wrapper">
+                <div class="form-wrapper">
+                    <form action="" method="post" id="form_aso" name="formAso" onsubmit="return sendRequest(event)"
+                        class="modal-form">
+                        <input type="name" name="name" placeholder="Имя Фамилия *" class="input-field must" required>
+                        <input type="text" name="request" placeholder="Компания *" class="input-field" required>
+                        <input type="email" name="email" placeholder="E-mail *" class="input-field must" required>
+                        <div>
+                            <p class="modal-helper"><span>*</span> — поля, обязательные для заполнения</p>
+                            <p class="modal-helper">Нажимая кнопку «Записаться», вы даёте свое <a href="./sogl.docx"
+                                    target="_blank"><span> согласие на обработку персональных
+                                        данных</span></a> и соглашаетесь с <a
+                                    href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                                    target="_blank"><span>политикой обработки персональных данных</span></a>.</p>
+                        </div>
+                        <div class="btn-wrapper">
+                            <button class="btn" type="submit" id="form_btn_submit">Записаться</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="social-wrapper">
+                    <div class="social-list">
+                        <a target="_blank" class="social-item-link" href="https://www.youtube.com/c/GoAhead_Channel">
+                            <div class="social-item youtube">
+                                <svg width="32" height="24" viewBox="0 0 32 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M30.7072 4.40921C30.4145 2.81775 29.0426 1.66531 27.4511 1.29945C25.073 0.787258 20.6462 0.439697 15.8718 0.439697C11.0974 0.439697 6.61573 0.80555 4.21939 1.29945C2.62793 1.66531 1.25598 2.74458 0.963296 4.40921C0.560857 6.91531 0.37793 9.45799 0.37793 12.0007C0.37793 15.2568 0.670613 17.7812 1.03647 19.5921C1.32915 21.1836 2.7011 22.336 4.29256 22.7019C6.81695 23.2141 11.1706 23.5617 15.945 23.5617C20.7194 23.5617 25.0548 23.1958 27.5974 22.7019C29.1889 22.336 30.5609 21.2568 30.8535 19.5921C31.2743 17.086 31.5121 14.5434 31.5852 12.0007C31.4938 9.4397 31.2011 6.91531 30.7072 4.40921ZM11.9755 17.0678V6.9336L20.8109 12.0007L11.9755 17.0678Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a target="_blank" class="social-item-link"
+                            href="https://www.linkedin.com/company/gomobilemarketing/">
+                            <div class="social-item linkedin">
+                                <svg width="28" height="27" viewBox="0 0 28 27" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M9.73753 26.6834C9.73753 26.6285 9.71924 26.5736 9.71924 26.5187C9.73753 21.8358 9.75582 17.1529 9.77412 12.4516C9.77412 11.3358 9.75582 10.2199 9.73753 9.12238C9.73753 9.03092 9.73753 8.92116 9.73753 8.8114C11.7131 8.8114 13.6887 8.8114 15.6644 8.8114C15.6644 9.63458 15.6644 10.476 15.6644 11.2992C15.6644 11.2992 15.6827 11.2992 15.6827 11.3175C15.7009 11.2809 15.7375 11.2626 15.7558 11.226C16.1583 10.6224 16.6339 10.0919 17.2009 9.65287C17.9509 9.0675 18.7924 8.68335 19.7436 8.51872C20.9692 8.29921 22.1948 8.35409 23.3839 8.75653C25.0485 9.30531 26.2375 10.3846 27.0058 11.9577C27.3351 12.6346 27.5363 13.348 27.6826 14.0797C27.8107 14.7931 27.8656 15.5065 27.8656 16.2382C27.8656 19.6956 27.8656 23.1712 27.8656 26.6285C27.8656 26.6651 27.8656 26.7017 27.8656 26.7382C25.89 26.7382 23.9144 26.7382 21.957 26.7382C21.957 26.6834 21.957 26.6285 21.957 26.5736C21.957 23.4821 21.957 20.3907 21.957 17.2992C21.957 16.8053 21.9387 16.3114 21.8473 15.8175C21.7741 15.3602 21.6461 14.9395 21.4266 14.5187C21.079 13.8785 20.5668 13.4395 19.8717 13.2565C19.4509 13.1468 19.0302 13.1285 18.5912 13.1651C18.0058 13.2199 17.4936 13.4029 17.0363 13.7687C16.6522 14.0797 16.3412 14.4456 16.1034 14.8846C15.9022 15.2321 15.7741 15.5797 15.7192 15.9821C15.6827 16.2748 15.6827 16.5675 15.6827 16.8785C15.6827 20.1163 15.6827 23.3724 15.6827 26.6102C15.6827 26.6651 15.6827 26.7199 15.6644 26.7748C13.6887 26.6834 11.7131 26.6834 9.73753 26.6834Z"
+                                        fill="white" />
+                                    <path
+                                        d="M0.5 26.6832C0.5 26.6284 0.5 26.5735 0.5 26.5186C0.5 20.6649 0.5 14.8113 0.5 8.97591C0.5 8.92103 0.5 8.86616 0.5 8.81128C2.47561 8.81128 4.45122 8.81128 6.42683 8.81128C6.42683 8.82957 6.44512 8.86616 6.44512 8.88445C6.44512 8.92103 6.44512 8.95762 6.44512 8.99421C6.44512 14.8296 6.44512 20.6832 6.44512 26.5186C6.44512 26.5735 6.44512 26.6284 6.44512 26.6832C4.45122 26.6832 2.47561 26.6832 0.5 26.6832Z"
+                                        fill="white" />
+                                    <path
+                                        d="M3.81085 0.177228C3.9206 0.195521 4.03036 0.213813 4.12182 0.213813C4.83524 0.305277 5.45719 0.579667 5.96938 1.09186C6.46329 1.58576 6.73768 2.17113 6.81085 2.86625C6.86573 3.30528 6.84743 3.7443 6.71939 4.16503C6.48158 4.9882 5.96938 5.55527 5.21938 5.95771C4.81695 6.17722 4.39621 6.28698 3.9389 6.32356C3.44499 6.37844 2.95109 6.36015 2.45719 6.2321C1.26816 5.95771 0.408406 5.00649 0.188894 3.92722C0.170601 3.83576 0.170602 3.76259 0.152309 3.67113C0.134016 3.61625 0.115723 3.56137 0.115723 3.50649C0.115723 3.32357 0.115723 3.15893 0.115723 2.97601C0.134015 2.92113 0.152309 2.88454 0.152309 2.82966C0.22548 2.18942 0.499869 1.62235 0.938894 1.14674C1.46938 0.59796 2.12792 0.305277 2.87792 0.195521C2.98768 0.177228 3.09743 0.158936 3.1889 0.158936C3.4267 0.177228 3.60963 0.177228 3.81085 0.177228Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a target="_blank" class="social-item-link" href="https://t.me/goaheadgroup">
+                            <div class="social-item telegram">
+                                <svg width="30" height="25" viewBox="0 0 30 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M2.06234 10.7623C10.1154 7.23426 15.4854 4.90834 18.1722 3.78456C25.8438 0.575968 27.4379 0.0186008 28.4769 0.000196234C28.7054 -0.00385165 29.2163 0.0530967 29.5473 0.32315C29.8268 0.551178 29.9037 0.859211 29.9405 1.07541C29.9773 1.2916 30.0231 1.7841 29.9867 2.16893C29.5709 6.56125 27.7721 17.2203 26.857 22.1397C26.4697 24.2214 25.7073 24.9193 24.9691 24.9876C23.3649 25.1361 22.1467 23.9216 20.593 22.8974C18.1617 21.2948 16.7882 20.2972 14.4282 18.7333C11.7008 16.926 13.4688 15.9327 15.0232 14.3094C15.4299 13.8845 22.4981 7.41981 22.6349 6.83335C22.652 6.76001 22.6679 6.48661 22.5063 6.34225C22.3448 6.19788 22.1064 6.24725 21.9344 6.28651C21.6905 6.34216 17.8065 8.92363 10.2823 14.0309C9.17983 14.7921 8.18124 15.1631 7.28655 15.1436C6.30022 15.1222 4.40291 14.5828 2.99246 14.1218C1.26249 13.5563 -0.112459 13.2574 0.00726778 12.297C0.0696291 11.7968 0.754654 11.2853 2.06234 10.7623Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                        </a>
+                        <a target="_blank" class="social-item-link" href="https://vk.com/goahead.group">
+                            <div class="social-item goahead">
+                                <svg width="35" height="21" viewBox="0 0 35 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M6.1105 0.409609C6.353 0.634424 6.55138 0.928167 6.55138 1.06231C6.55138 1.55049 8.34264 5.60754 9.37891 7.4666C10.7457 9.91832 12.4304 11.8591 13.1916 11.8591C13.9637 11.8591 14.0922 11.0328 13.9873 6.73854C13.9049 3.36853 13.8907 3.29096 13.1362 2.10289C12.5478 1.17621 12.4234 0.79056 12.6022 0.447654C12.8115 0.0471862 13.2087 0.000741227 16.4287 0.000741227C19.0385 0.000741227 20.0751 0.0852324 20.2168 0.309554C20.3241 0.479524 20.448 2.67481 20.4921 5.18805C20.5362 7.70154 20.6758 9.88571 20.8023 10.0418C21.1984 10.531 21.9396 10.1194 23.1919 8.71494C24.4538 7.29984 26.453 4.02963 27.4052 1.82348C27.7106 1.11568 28.1802 0.416032 28.4489 0.26879C28.9633 -0.0133409 33.2379 -0.106231 33.8909 0.150701C34.9168 0.554134 33.9234 2.9772 30.7452 7.82408C29.6359 9.51612 28.7281 11.0641 28.7281 11.2645C28.7281 11.4646 29.7663 12.7525 31.0352 14.1263C32.3038 15.5002 33.714 17.1905 34.1688 17.8825C35.0692 19.2526 35.27 20.5921 34.6141 20.85C34.4043 20.9326 33.093 21 31.7 21H29.167L26.3561 18.213C23.456 15.3371 22.1117 14.427 21.1359 14.678C20.5981 14.8163 20.5716 14.9334 20.4935 17.5287C20.4393 19.3252 20.3062 20.3431 20.0977 20.5561C19.882 20.7762 19.0899 20.8686 17.5667 20.8515C15.7933 20.8315 15.0229 20.6971 13.7154 20.1803C10.3132 18.8353 7.7106 16.5099 5.02625 12.4167C1.4898 7.02438 -0.930116 0.691494 0.344321 0.164289C0.510164 0.0958562 1.77616 0.0308819 3.15763 0.0202588C5.17571 0.00469462 5.7564 0.0810322 6.1105 0.409609Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="address-contacts">
+                        <p class="address"><a href="mailto:hi@goahead.ai">hi@goahead.ai</a> | <a
+                                href="tel:+7 (495) 665-91-24">+7 (495) 665-91-24</a> </p>
+                        <p class="address"><a href="https://yandex.ru/maps/-/CCUNqDBl-A" target="_blank">127006, Москва,
+                                Долгоруковская улица, 7 БЦ "Садовая Плаза"</a> </p>
+                    </div>
+                    <div class="foot">
+                        <img src="./img/icon/logo.svg" class="footer-logo" alt="logo">
+                        <p class="address policy"><a
+                                href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                                target="_blank">Политика обработки персональных
+                                данных <br />(Политика
+                                конфиденциальности)</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="./scripts/jquery.validate.min.js"></script>
+    <script src="./scripts/jquery.serialize-object.min.js"></script>
+    <script src="./scripts/script.js"></script>
+
+    <script defer>
+        function sendReqest(e) {
+            e.preventDefault();
+            const form = document.forms.aheadForm;
+            // if (!form.checkValidity()) return false;
+            const formData = new FormData(form);
+            // in prod use ./submit_request.php to fetch
+            var abc = $('#ahead_form_btn').html('&#10003;').text();
+            $("#ahead_form_btn").val(abc);
+            $("#ahead_form_btn").css("font-size", "2vw");
+            return fetch('./submit_request.php', {
+                    method: 'post',
+                    body: formData,
+                })
+                .then(res => res.json())
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
+
+            return false;
+        }
+    </script>
+    <script>
+        $.fn.serializeObject = function () {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function () {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [o[this.name]];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        };
+        var influence_form = document.getElementById("ahead_form");
+        var $ahead_form = $('form#ahead_form'),
+            url_ahead =
+            'https://script.google.com/macros/s/AKfycbzckPorXGB9oYEsXsLPLXCuNweqzOSRzU752AJuvPnpx2nCEwP1YZ4kovlTw4-qQBeQwQ/exec'
+        $('#ahead_form_btn').on('click', function (e) {
+            console.log('-');
+            e.preventDefault();
+            var jqxhr = $.ajax({
+                url: url_ahead,
+                method: "GET",
+                dataType: "json",
+                data: $ahead_form.serializeObject()
+            }).success(function (e) {
+                    console.log(e);
+                    sendReqest(event);
+                }
+                // do something
+            );
+        })
+    </script>
+
+</body>
+
+</html>

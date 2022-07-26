@@ -1,0 +1,148 @@
+@media screen and (max-width: 1130px) {
+  .d-desctop {
+    display: none;
+  }
+  .d-mobile {
+    display: block;
+  }
+  .container {
+    padding: 0 50px;
+  }
+
+  .modal-section {
+    border-radius: 15px;
+    padding: 50px 20px 35px;
+    .close {
+      right: 10px;
+      top: 10px;
+    }
+    .modal-form input {
+      margin-bottom: 20px;
+    }
+    .modal-form button {
+      margin-bottom: 10px;
+      font-size: 19px;
+      line-height: 14px;
+      width: 75%;
+    }
+  }
+
+  .modal-section {
+    padding: 54px 20px 28px;
+    .close {
+      width: 25px;
+      height: 25px;
+      right: 25px;
+      top: 25px;
+    }
+    .modal-form input {
+      margin-bottom: 25px;
+    }
+    .modal-form button {
+      margin-bottom: 25px;
+    }
+  }
+  .nav {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .header {
+    background: none;
+    flex-direction: column;
+    .main_box {
+      margin: 100px 0 0;
+      max-width: 100%;
+    }
+  }
+  .footer {
+    .form-wrapper,
+    .social-wrapper {
+      max-width: 45%;
+    }
+  }
+}
+@media screen and (max-width: 750px) {
+  .main-title {
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+  }
+  .second {
+    .item-number {
+      max-width: 70px;
+      margin-right: 45px;
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+      }
+    }
+    .item-content h2 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    .second-item {
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+    .item-content-list {
+      flex-direction: column;
+    }
+    .second-bg-mobile {
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+    }
+  }
+  .footer-wrapper {
+    flex-direction: column;
+  }
+  .header .main_box {
+    h1 {
+      font-weight: 600;
+      font-size: 51px;
+      line-height: 61px;
+    }
+    p {
+      font-weight: 300;
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+  .second .item-content-list .item-content-item {
+    width: 100%;
+  }
+  .footer .footer-wrapper{
+    margin-top: 20px;
+  }
+  .footer .form-wrapper,
+  .footer .social-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-section .modal-helper {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .btn {
+    max-width: 205px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 14px;
+  }
+  .modal-section {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .modal-section {
+    max-height: 100vh;
+    .modal-form input {
+      margin-bottom: 5px;
+    }
+  }
+}
