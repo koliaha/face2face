@@ -88,7 +88,7 @@ body {
   visibility: hidden;
   position: fixed;
   /* Stay in place */
-  z-index: 100;
+  z-index: 105;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -163,6 +163,8 @@ body {
 
 .modal-section-thank-active {
   display: block;
+  -webkit-transition: 0s !important;
+  transition: 0s !important;
 }
 
 .modal-section {
@@ -369,10 +371,7 @@ body {
 .header {
   color: white;
   padding: 127px 0;
-  background-image: url("../img/dj.svg");
-  background-repeat: no-repeat;
-  background-size: auto 70%;
-  background-position: right center;
+  position: relative;
 }
 
 .header .header-date {
@@ -393,6 +392,38 @@ body {
   font-size: 73px;
   line-height: 88px;
   margin-bottom: 90px;
+}
+
+.header .header-content {
+  position: relative;
+}
+
+.header .header-dj-main {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  z-index: 100;
+  max-width: 854px;
+  width: 100%;
+}
+
+.header .header-btn-container {
+  position: relative;
+}
+
+.header .header-btn-container .lineshort {
+  position: absolute;
+  left: 145px;
+  top: 55px;
+  z-index: -1;
+}
+
+.header .header-btn-container .header-heart {
+  position: absolute;
+  left: 380px;
+  top: 100px;
 }
 
 .btn-header {
@@ -428,6 +459,21 @@ body {
 
 .second {
   color: white;
+  padding-top: 100px;
+}
+
+.second .second-wrapper {
+  position: relative;
+}
+
+.second .second-wrapper .second-arrows {
+  position: absolute;
+  left: auto;
+  right: -14px;
+  z-index: 100;
+  top: 50%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .second .second-list {
@@ -491,6 +537,16 @@ body {
 
 .third {
   color: white;
+}
+
+.third .third-title {
+  position: relative;
+}
+
+.third .third-title img {
+  position: absolute;
+  right: 0;
+  bottom: 15px;
 }
 
 .third .third-list {

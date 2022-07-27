@@ -17,40 +17,42 @@
 
 <body>
     <div id="myModalFinish" class="modal">
-        <div class="modal-section modal-section-thank">
+        <div class="modal-section modal-center modal-section-thank">
             <div class="close" onclick="closeModal()"></div>
             <div class="form-content">
-              <div class="heart">
-                <svg width="66" height="60" viewBox="0 0 66 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M65.7473 17.3571C65.7598 13.3472 64.3968 9.45735 61.8914 6.35256C59.386 3.24778 55.8938 1.12083 52.0116 0.335282C48.1295 -0.450263 44.0985 0.154375 40.6078 2.04584C37.117 3.93731 34.3832 6.99816 32.8737 10.7052C31.3642 6.99816 28.6304 3.93731 25.1396 2.04584C21.6489 0.154375 17.6179 -0.450263 13.7358 0.335282C9.85364 1.12083 6.3614 3.24778 3.85602 6.35256C1.35063 9.45735 -0.012345 13.3472 8.42627e-05 17.3571C8.42627e-05 17.607 8.42627e-05 17.857 8.42627e-05 18.1261C8.42627e-05 44.5032 32.8737 59.4605 32.8737 59.4605C32.8737 59.4605 65.7473 44.5032 65.7473 18.1261C65.7473 17.8762 65.7473 17.6263 65.7473 17.3571Z" fill="#FF7323"/>
-                    </svg>                    
-              </div>
-              <div class="modal-thanks">
-                Спасибо за интерес <br/>к прямому эфиру
-              </div>
-              <p class="modal-sucsess">Ваша заявка отправлена</p>
+                <div class="heart">
+                    <svg width="66" height="60" viewBox="0 0 66 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M65.7473 17.3571C65.7598 13.3472 64.3968 9.45735 61.8914 6.35256C59.386 3.24778 55.8938 1.12083 52.0116 0.335282C48.1295 -0.450263 44.0985 0.154375 40.6078 2.04584C37.117 3.93731 34.3832 6.99816 32.8737 10.7052C31.3642 6.99816 28.6304 3.93731 25.1396 2.04584C21.6489 0.154375 17.6179 -0.450263 13.7358 0.335282C9.85364 1.12083 6.3614 3.24778 3.85602 6.35256C1.35063 9.45735 -0.012345 13.3472 8.42627e-05 17.3571C8.42627e-05 17.607 8.42627e-05 17.857 8.42627e-05 18.1261C8.42627e-05 44.5032 32.8737 59.4605 32.8737 59.4605C32.8737 59.4605 65.7473 44.5032 65.7473 18.1261C65.7473 17.8762 65.7473 17.6263 65.7473 17.3571Z"
+                            fill="#FF7323" />
+                    </svg>
+                </div>
+                <div class="modal-thanks">
+                    Спасибо за интерес <br />к прямому эфиру
+                </div>
+                <p class="modal-sucsess">Ваша заявка отправлена</p>
             </div>
         </div>
     </div>
     <div id="myModal" class="modal">
         <div class="modal-section modal-center modal-form-wrapper">
             <div class="close" onclick="closeModal()"></div>
-                <!--  -->
-                <form action="" method="post" id="ahead_form" onsubmit="return sendRequest(event)" name="ahead_form"
-                    class="modal-form">
-                    <input type="name" name="name" placeholder="Имя Фамилия *" class="input-field must" required>
-                    <input type="company" name="company" placeholder="Компания *" class="input-field must" required>
-                    <input type="email" name="email" placeholder="E-mail *" class="input-field must" required>
-                    <div>
-                        <p class="modal-helper"><span>*</span> — поля, обязательные для заполнения</p>
-                        <p class="modal-helper">Нажимая кнопку «Записаться», вы даёте свое <a href="./sogl.docx"
-                                target="_blank"><span> согласие на обработку персональных
-                                    данных</span></a> и соглашаетесь с <a
-                                href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
-                                target="_blank"><span>политикой обработки персональных данных</span></a>.</p>
-                    </div>
-                    <button disabled="disabled" class="btn" type="submit" id="ahead_form_btn">Записаться</button>
-                </form>
+            <!--  -->
+            <form action="" method="post" id="ahead_form" onsubmit="return sendRequest(event)" name="ahead_form"
+                class="modal-form">
+                <input type="name" name="name" placeholder="Имя Фамилия *" class="input-field must" required>
+                <input type="company" name="company" placeholder="Компания *" class="input-field must" required>
+                <input type="email" name="email" placeholder="E-mail *" class="input-field must" required>
+                <div>
+                    <p class="modal-helper"><span>*</span> — поля, обязательные для заполнения</p>
+                    <p class="modal-helper">Нажимая кнопку «Записаться», вы даёте свое <a href="./sogl.docx"
+                            target="_blank"><span> согласие на обработку персональных
+                                данных</span></a> и соглашаетесь с <a
+                            href="https://gomobile.ru/uploads/origin/files/1/politika_obrabotki_personalnyh_dannyh.pdf"
+                            target="_blank"><span>политикой обработки персональных данных</span></a>.</p>
+                </div>
+                <button disabled="disabled" class="btn" type="submit" id="ahead_form_btn">Записаться</button>
+            </form>
 
             <div class="form-loader">
                 <div class="form-loader-wrapper">
@@ -58,7 +60,7 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
     <nav class="nav">
         <div class="container">
@@ -72,7 +74,7 @@
         <img src="./img/star.svg" alt="" class="star-nav d-desctop">
     </nav>
     <header class="header">
-        <div class="container">
+        <div class="container header-content">
             <div class="header-left">
                 <div class="header-date">
                     3 августа 18:00 <span>| Прямой эфир</span>
@@ -84,13 +86,22 @@
                 <h1 class="header-title">
                     Всё о рекламе <br /> в подкастах
                 </h1>
-                <button class="btn btn-header" id="myBtn" onclick="openModal('myModal')">Принять участие</button>
+                <div class="header-btn-container">
+                    <button class="btn btn-header" id="myBtn" onclick="openModal('myModal')">Принять участие</button>
+                    <img class="lineshort" src="./img/lineshort.svg" alt="">
+                    <img class="header-heart" src="./img/heart.svg" alt="">
+                </div>
             </div>
+            <img class="d-desctop header-dj-main" src="./img/dj.svg" alt="">
         </div>
         <img class="d-mobile header-dj" src="./img/dj.svg" alt="">
     </header>
     <section class="second">
-        <div class="container">
+        <div class="container second-wrapper">
+            <div class="arrows second-arrows">
+                <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+                <img src="./img/icon/arrow_right.svg" alt="arrow_right">
+            </div>
             <h1 class="main-title">
                 О чем говорим
             </h1>
@@ -140,8 +151,9 @@
     </section>
     <section class="third">
         <div class="container">
-            <h1 class="main-title">
+            <h1 class="main-title third-title">
                 Кто в эфире
+                <img src="./img/linelong.svg" alt="">
             </h1>
             <div class="third-list">
                 <div class="third-item">
@@ -160,8 +172,9 @@
                         <img class="star" src="./img/star2.svg" alt="">
                     </div>
                     <div>
-                    <p class="item-name">Полина Варпулева </p>
-                    <a href="https://goahead.ai/" target="_blank" class="item-link">Go Ahead</a></div>
+                        <p class="item-name">Полина Варпулева </p>
+                        <a href="https://goahead.ai/" target="_blank" class="item-link">Go Ahead</a>
+                    </div>
                 </div>
                 <div class="third-item">
                     <div class="item-ava">
@@ -169,8 +182,9 @@
                         <img class="star" src="./img/star2.svg" alt="">
                     </div>
                     <div>
-                    <p class="item-name">Роман Абдурахимов </p>
-                    <a href="https://f2fst.ru/" target="_blank" class="item-link">Face 2 Face</a></div>
+                        <p class="item-name">Роман Абдурахимов </p>
+                        <a href="https://f2fst.ru/" target="_blank" class="item-link">Face 2 Face</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -285,32 +299,31 @@
     <script src="./scripts/script.js"></script>
 
     <script defer>
-       function sendRequest(e) {
-                e.preventDefault();
-                const form = document.querySelector("#ahead_form");
-                // if (!form.checkValidity()) return false;
-                const formData = new FormData(form);
-                // in prod use ./submit_request.php to fetch
-                // var abc = $("#ahead_form_btn").html("&#10003;").text();
-                
-                openModal('myModalFinish')
-                $("#ahead_form_btn").val(abc);
-                $("#ahead_form_btn").css("font-size", "2vw");
-                const dataFoSheet = [];
-                dataFoSheet[0] = formData.get("name");
-                dataFoSheet[1] = formData.get("company");
-                dataFoSheet[2] = formData.get("email");
-                fetch(
-                    "https://script.google.com/macros/s/AKfycbwTbonPcqkMXRO-3b7vwgAwWKRMaOsDwOLJH4PFen9c5ELxoQkMpqqXjHad-1-z9v7kjA/exec",
-                    {
-                        method: "POST",
-                        mode: "no-cors",
-                        body: JSON.stringify(dataFoSheet),
-                    }
-                );
-            }
+        function sendRequest(e) {
+            e.preventDefault();
+            const form = document.querySelector("#ahead_form");
+            // if (!form.checkValidity()) return false;
+            const formData = new FormData(form);
+            // in prod use ./submit_request.php to fetch
+            // var abc = $("#ahead_form_btn").html("&#10003;").text();
+
+            openModal('myModalFinish')
+            // $("#ahead_form_btn").val(abc);
+            $("#ahead_form_btn").css("font-size", "2vw");
+            const dataFoSheet = [];
+            dataFoSheet[0] = formData.get("name");
+            dataFoSheet[1] = formData.get("company");
+            dataFoSheet[2] = formData.get("email");
+            fetch(
+                "https://script.google.com/macros/s/AKfycbwTbonPcqkMXRO-3b7vwgAwWKRMaOsDwOLJH4PFen9c5ELxoQkMpqqXjHad-1-z9v7kjA/exec", {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify(dataFoSheet),
+                }
+            );
+        }
     </script>
-   
+
 </body>
 
 </html>

@@ -7,8 +7,11 @@ function openModal(id) {
   modal_id = id;
 }
 function closeModal() {
-  let modalpopup = document.querySelector(`#${modal_id}`);
-  modalpopup.classList.remove("modal-active");
+  // let modalpopup = document.querySelector(`#${modal_id}`);
+  let modalpopup = document.querySelectorAll('.modal');
+  modalpopup.forEach(el =>{
+    el.classList.remove("modal-active");
+  })
 }
 
 window.onclick = function (event) {

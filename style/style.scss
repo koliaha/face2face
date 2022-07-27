@@ -54,7 +54,7 @@ body {
     transform: rotate(360deg);
   }
 }
-#myModalFinish{
+#myModalFinish {
   z-index: 1000;
 }
 /* The Modal (background) */
@@ -62,7 +62,7 @@ body {
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   position: fixed; /* Stay in place */
-  z-index: 100; /* Sit on top */
+  z-index: 105; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -99,19 +99,19 @@ body {
   .modal-center {
     transform: scale(1);
   }
-  .transitOff{
+  .transitOff {
     transform: scale(0);
     display: none;
   }
-  .transitOn{
+  .transitOn {
     display: block;
     transform: scale(1);
   }
 }
 
-
-.modal-section-thank-active{
+.modal-section-thank-active {
   display: block;
+  transition: 0s !important;
 }
 .modal-section {
   transform: scale(0);
@@ -175,7 +175,7 @@ body {
       margin-top: 30px;
     }
   }
-  &.modal-section-thank{
+  &.modal-section-thank {
     transform: scale(1);
     z-index: 1000;
   }
@@ -272,10 +272,11 @@ body {
 .header {
   color: white;
   padding: 127px 0;
-  background-image: url("../img/dj.svg");
-  background-repeat: no-repeat;
-  background-size: auto 70%;
-  background-position: right center;
+  position: relative;
+  // background-image: url("../img/dj.svg");
+  // background-repeat: no-repeat;
+  // background-size: auto 70%;
+  // background-position: right center;
   .header-date {
     position: relative;
     font-weight: 400;
@@ -293,6 +294,32 @@ body {
     font-size: 73px;
     line-height: 88px;
     margin-bottom: 90px;
+  }
+  .header-content {
+    position: relative;
+  }
+  .header-dj-main {
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    transform: translate(50%, -50%);
+    z-index: 100;
+    max-width: 854px;
+    width: 100%;
+  }
+  .header-btn-container {
+    position: relative;
+    .lineshort {
+      position: absolute;
+      left: 145px;
+      top: 55px;
+      z-index: -1;
+    }
+    .header-heart {
+      position: absolute;
+      left: 380px;
+    top: 100px;
+    }
   }
 }
 .btn-header {
@@ -320,6 +347,18 @@ body {
 }
 .second {
   color: white;
+  padding-top: 100px;
+  .second-wrapper {
+    position: relative;
+    .second-arrows {
+      position: absolute;
+      left: auto;
+      right: -14px;
+      z-index: 100;
+      top: 50%;
+      transform: rotate(90deg);
+    }
+  }
   .second-list {
     margin-top: 100px;
   }
@@ -373,6 +412,14 @@ body {
 }
 .third {
   color: white;
+  .third-title {
+    position: relative;
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 15px;
+    }
+  }
   .third-list {
     display: flex;
     justify-content: space-between;
