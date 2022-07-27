@@ -140,9 +140,29 @@ body {
   opacity: 1;
 }
 
-.modal-active .modal-section {
+.modal-active .modal-center {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.modal-active .transitOff {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  display: none;
+}
+
+.modal-active .transitOn {
+  display: block;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal-section-thank {
+  display: none;
+}
+
+.modal-section-thank-active {
+  display: block;
 }
 
 .modal-section {
@@ -194,6 +214,38 @@ body {
 .modal-section .close:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.modal-section .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.modal-section .form-content .heart {
+  margin-bottom: 10px;
+}
+
+.modal-section .form-content .modal-thanks {
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 42px;
+}
+
+.modal-section .form-content .modal-sucsess {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 30px;
 }
 
 .btn-wrapper {
@@ -343,7 +395,7 @@ body {
 
 .btn-header::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 1px;
   width: 50vw;
   right: 0;
