@@ -271,27 +271,30 @@
     <script src="./scripts/script.js"></script>
 
     <script defer>
-        function sendReqest(e) {
-            e.preventDefault();
-            const form = document.forms.aheadForm;
-            // if (!form.checkValidity()) return false;
-            const formData = new FormData(form);
-            // in prod use ./submit_request.php to fetch
-            var abc = $('#ahead_form_btn').html('&#10003;').text();
-            $("#ahead_form_btn").val(abc);
-            $("#ahead_form_btn").css("font-size", "2vw");
-            return fetch('./submit_request.php', {
-                    method: 'post',
-                    body: formData,
-                })
-                .then(res => res.json())
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
-
-            return false;
-        }
+       function sendRequest(e) {
+                e.preventDefault();
+                const form = document.querySelector("#ahead_form");
+                // if (!form.checkValidity()) return false;
+                const formData = new FormData(form);
+                // in prod use ./submit_request.php to fetch
+                var abc = $("#ahead_form_btn").html("&#10003;").text();
+                $("#ahead_form_btn").val(abc);
+                $("#ahead_form_btn").css("font-size", "2vw");
+                const dataFoSheet = [];
+                dataFoSheet[0] = formData.get("name");
+                dataFoSheet[1] = formData.get("company");
+                dataFoSheet[2] = formData.get("email");
+                fetch(
+                    "https://script.google.com/macros/s/AKfycbwTbonPcqkMXRO-3b7vwgAwWKRMaOsDwOLJH4PFen9c5ELxoQkMpqqXjHad-1-z9v7kjA/exec",
+                    {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: JSON.stringify(dataFoSheet),
+                    }
+                );
+            }
     </script>
-    <script>
+    <!-- <script>
         $.fn.serializeObject = function () {
             var o = {};
             var a = this.serializeArray();
@@ -310,7 +313,7 @@
         var influence_form = document.getElementById("ahead_form");
         var $ahead_form = $('form#ahead_form'),
             url_ahead =
-            'https://script.google.com/macros/s/AKfycbzckPorXGB9oYEsXsLPLXCuNweqzOSRzU752AJuvPnpx2nCEwP1YZ4kovlTw4-qQBeQwQ/exec'
+            'https://script.google.com/macros/s/AKfycbwTbonPcqkMXRO-3b7vwgAwWKRMaOsDwOLJH4PFen9c5ELxoQkMpqqXjHad-1-z9v7kjA/exec'
         $('#ahead_form_btn').on('click', function (e) {
             console.log('-');
             e.preventDefault();
@@ -321,12 +324,12 @@
                 data: $ahead_form.serializeObject()
             }).success(function (e) {
                     console.log(e);
-                    sendReqest(event);
+                    // sendReqest(event);
                 }
                 // do something
             );
         })
-    </script>
+    </script> -->
 
 </body>
 
