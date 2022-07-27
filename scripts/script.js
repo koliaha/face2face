@@ -12,9 +12,13 @@ function closeModal() {
 }
 
 window.onclick = function (event) {
-  let modal = document.getElementById(modal_id);
+  let modal = document.getElementById('myModalFinish');
   if (event.target == modal) {
     modal.classList.remove("modal-active");
+  }
+  let modal1 = document.getElementById('myModal');
+  if (event.target == modal1) {
+    modal1.classList.remove("modal-active");
   }
 };
 function addLoader() {
