@@ -57,15 +57,68 @@ $(document).on("click", 'a[href^="#"]', function (event) {
 
 ////validation form
 $(document).ready(function () {
-  $(".modal-form").on("blur keyup change", "input", function () {
-    if ($(".modal-form").valid()) {
+  $("#ahead_form").on("blur keyup change", "input", function () {
+    if ($("#ahead_form").valid()) {
       $("#ahead_form_btn").prop("disabled", false);
     } else {
       $("#ahead_form_btn").prop("disabled", "disabled");
     }
   });
 
-  $(".modal-form").validate({
+  $("#ahead_form").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 4,
+        maxlength: 25,
+      },
+      email: {
+        required: true,
+        email: true,
+      },
+      company: {
+        required: true,
+        minlength: 2,
+      },
+      phone: {
+        digits: true,
+      },
+    },
+    messages: {
+      name: {
+        required: "Это поле обязательно для заполнения",
+        minlength: "Имя должен быть минимум 4 символа",
+        maxlength: "Максимальное число символов - 25",
+      },
+      email: {
+        required: "Это поле обязательно для заполнения",
+        email: "формат хххххх@хх.хх",
+      },
+      company: {
+        required: "Это поле обязательно для заполнения",
+        minlength: "Поле должен быть минимум 2 символа",
+      },
+      phone: {
+        digits: "Только цифры!",
+      },
+    },
+  });
+  jQuery.validator.addMethod("accept", function (value, element, param) {
+    return value.match(new RegExp("." + param + "$"));
+  });
+});
+
+////validation form
+$(document).ready(function () {
+  $("#form_aso").on("blur keyup change", "input", function () {
+    if ($("#form_aso").valid()) {
+      $("#form_btn_submit").prop("disabled", false);
+    } else {
+      $("#form_btn_submit").prop("disabled", "disabled");
+    }
+  });
+
+  $("#form_aso").validate({
     rules: {
       name: {
         required: true,

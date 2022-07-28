@@ -218,6 +218,10 @@
     margin-bottom: 10px;
     padding-left: 36px;
   }
+  .third .third-list {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
   .third .item-ava {
     margin-bottom: 0;
   }
@@ -226,8 +230,9 @@
     height: 160px;
   }
   .third .item-ava .star {
-    top: -30px;
-    left: -30px;
+    width: 60px;
+    top: 0px;
+    left: -15px;
   }
   .third .item-name {
     font-size: 25px;
