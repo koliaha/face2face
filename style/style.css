@@ -598,6 +598,15 @@ body {
   margin-bottom: 11px;
 }
 
+.third .item-work {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #FF7323;
+  margin: 10px 0;
+}
+
 .third .item-link {
   font-weight: 600;
   font-size: 20px;
@@ -605,6 +614,12 @@ body {
   text-align: center;
   display: block;
   color: #ff7323;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.third .item-link:hover {
+  opacity: 0.6;
 }
 
 .footer {
